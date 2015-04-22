@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
   <title>Slo</title>
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "styles" %>
+  <%= javascript_include_tag "scripts"%>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= render 'layouts/header' %>
 <%= yield %>
-
+<%= render 'layouts/footer' %>
 </body>
 </html>

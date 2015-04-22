@@ -1,28 +1,8 @@
-== README
+# SLO Project
+A web application for the assessment of Student Learning Outcomes for the courses they have taken.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Motivation
+To check if the students are attaining the learning outcomes as outlined by the course. Gives an overview of how successful the course has been and what areas of the course should be improved on.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+##Functionality
+Student will be checked on learning outcomes as set forth by the professor of the course. Students will be required to take the test before and after the course to check how the course has helped them grasp the materials and attain the course objectives and learning outcomes.
