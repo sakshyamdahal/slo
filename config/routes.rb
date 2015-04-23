@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'take_quiz/take'
+  patch 'take_quiz/evaluate'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :options

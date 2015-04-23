@@ -1,0 +1,19 @@
+<section class="container-fluid" id="section1">
+	<div class="centerText">
+	<h2>Congratulations <%= current_user.name %></h2> 
+	<h2>You finished the quiz <%= @quiz.name %></h2>
+	<br />
+	<br />
+
+	<h3>Your score <%= @score %> </h3>
+	<div class="progress">
+  			<div class="progress-bar progress-bar-success" style="width: <%= (@score/@totalScore) * 100 %>%">
+		    	<span class="sr-only"><%= (@score/@totalScore) * 100 %>%</span>
+		 	</div>
+		 	<div class="progress-bar progress-bar-danger" style="width: <%= 100 - ((@score/@totalScore) * 100 )%>%">
+		    	<span class="sr-only"><%= 100 - ((@score/@totalScore) * 100 )%>%</span>
+		 	</div>
+		 </div>
+	<h3>Total questions <%= @totalScore %> </h3>
+	</div>
+</section>

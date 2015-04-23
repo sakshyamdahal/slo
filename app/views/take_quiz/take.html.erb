@@ -4,13 +4,23 @@
 		<hr/>
 		<br />
 	</div>
+	<%= form_for @user, :as => :get, :url => take_quiz_evaluate_path do |f| %>
 		<% @questions.each do |q| %>
 			<h2><%= q.ques %></h2>
 			<% @options = q.options %>
 			<% @options.each do |o| %>
-				<%= o.opt %>
-				<br />
+
+				<div class="radio">
+					<label>
+						<input type="radio" label = "<%= q.id %>" name= "<%= q.id %>" value = "<%= o.id %>" required>
+						<%= o.opt %>
+					</label>
+				</div>
 			<% end %>
 		<% end %>
+		<br />
+		<%= hidden_field_tag 'quiz_id', @quiz.id %>
+		<%= submit_tag "Submit Answers", class: "btn btn-large btn-primary btn-block" %>
+	<% end %>
 	
 </section>
