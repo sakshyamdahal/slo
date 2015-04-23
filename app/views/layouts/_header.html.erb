@@ -11,9 +11,13 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible">
             <ul class="nav navbar-nav navbar-left">
-
+                <% if user_signed_in? %>
+                  <li class="<%= 'active' if current_page?(edit_user_registration_path) %>"><%= link_to "Edit profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li class="<%= 'active' if current_page?(new_user_session_path) %>"><%= link_to "Sign in", new_user_session_path %></li>
+                <% end %>
                 <li><%= link_to "About", root_path %></li>
-                <li><%= link_to "Login", root_path %></li>
                 <li><%= link_to "Hello", root_path %></li>
                 <li><%= link_to "People", root_path %></li>
                 <li>&nbsp;</li>

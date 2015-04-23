@@ -1,5 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
 @import url(http://fonts.googleapis.com/css?family=Bitter:400);
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 html,body {
 	height:100%;
@@ -15,6 +18,8 @@ html,body {
         font-size:68px;
     }
 }
+
+
 
 a {
     color:#999;
@@ -206,4 +211,6 @@ footer .nav>li>a:hover {
 .fa-github {
   color: black;
 }
+
+
 

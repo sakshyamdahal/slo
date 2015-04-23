@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+    
+$(".registrationForm").hide();
+
 /* activate scrollspy menu */
 $('body').scrollspy({
   target: '#navbar-collapsible',
@@ -21,7 +25,6 @@ $('a[href*=#]:not([href=#])').click(function() {
             $('.scroll-up').show();
         }
         
-        
         // activte animations in this section
         target.find('.animate').delay(1200).addClass("animated");
         setTimeout(function(){
@@ -31,4 +34,19 @@ $('a[href*=#]:not([href=#])').click(function() {
         return false;
       }
     }
+});
+
+$( "#loginUser" ).click(function(event) {
+  event.preventDefault();
+  $(".loginForm").hide();
+  $(".registrationForm").show();
+});
+
+$( "#newUserRegistration" ).click(function(event) {
+  event.preventDefault();
+  $(".loginForm").show();
+  $(".registrationForm").hide();
+});
+
+
 });
