@@ -2,6 +2,12 @@ $( document ).ready(function() {
     
 $(".registrationForm").hide();
 
+$(function() {
+  setTimeout(function(){
+    $('.alert').fadeOut(700);
+  }, 1000);
+});
+
 /* activate scrollspy menu */
 $('body').scrollspy({
   target: '#navbar-collapsible',

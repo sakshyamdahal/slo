@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'take_quiz/take'
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :options
+
+  resources :questions
+
+  resources :tests
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  resources :courses
+
   devise_for :users
   root 'welcome#home'
 

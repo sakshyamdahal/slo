@@ -1,5 +1,10 @@
+<% if !current_user %>
+
 <section class="container-fluid" id="section1">
     <div class="v-center">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: 'alert alert-info') %>
+    <% end %>
         <h1 class="text-center">Learn Better</h1>
         <% if user_signed_in? %>
         <%= current_user.email %>
@@ -114,3 +119,37 @@
         </div>
     </div>
 </section>
+
+<% else %>
+<section class="container-fluid" id="section1">
+<div class="centerText">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: 'alert alert-info') %>
+    <% end %>
+    <h2>Hello <%= current_user.name %></h2> 
+    <h3>Available Tests</h3>
+    <br />
+    <br />
+</div>
+<% if @tests.count == 0 %>
+    <%= "<p>No tests available right now. Check back later :)</p>" %>
+<% else %>
+    <% @tests.each do |t| %>
+<div class="col-md-4 col-sm-6">
+    <div class="panel panel-default">
+           <div class="panel-heading"><h4><%= t.name %></h4></div>
+            <div class="panel-body">
+              <%= "Description: #{t.description}" %>
+              
+              <hr>
+              <ul class="list-unstyled"><li><%= "Number of questions: #{t.questions.count}" %></li>
+              <li>Your score: 20%</li></ul>
+              <%= link_to "Take Quiz", take_quiz_take_path(quiz_id: t), class: "btn btn-primary btn-lg btn-block" %>
+            </div>
+         </div> 
+         </div>
+    <% end %>
+<% end %>
+
+</section>
+<% end %>

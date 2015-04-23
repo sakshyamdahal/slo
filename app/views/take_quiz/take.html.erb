@@ -1,0 +1,16 @@
+<section class="container-fluid" id="section1">
+	<div class="centerText">
+		<h1><%= @quiz.name %></h1>
+		<hr/>
+		<br />
+	</div>
+		<% @questions.each do |q| %>
+			<h2><%= q.ques %></h2>
+			<% @options = q.options %>
+			<% @options.each do |o| %>
+				<%= o.opt %>
+				<br />
+			<% end %>
+		<% end %>
+	
+</section>

@@ -38,7 +38,8 @@
             <div class="registrationForm">
                 <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
                 <%= form_for(:user, :url => registration_path(:user), html: { class: "col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0"}) do |f| %>
-                
+                  <%= f.text_field :name, class: "form-control input-lg", :placeholder => "Name" %>
+                  <br />
                   <%= f.text_field :email, class: "form-control input-lg", :placeholder => "Email" %>
                   <br/>
                   <%= f.password_field :password, class: "form-control input-lg", :placeholder => "Password" %>
