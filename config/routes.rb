@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :scores
+
   get 'take_quiz/take'
   patch 'take_quiz/evaluate'
 

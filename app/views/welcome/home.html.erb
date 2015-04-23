@@ -143,8 +143,15 @@
               
               <hr>
               <ul class="list-unstyled"><li><%= "Number of questions: #{t.questions.count}" %></li>
-              <li>Your score: 20%</li></ul>
+              </ul>
+
+              <% score = Score.where(user_id: current_user.id, test_id: t.id) %>
+
+              <% if score.size != 0 %>
+              <button type="button" class="btn btn-lg btn-primary btn-block" disabled="disabled">Score: <%= score[0].percentage %>%</button>
+              <% else %>
               <%= link_to "Take Quiz", take_quiz_take_path(quiz_id: t), class: "btn btn-primary btn-lg btn-block" %>
+              <% end %>
             </div>
          </div> 
          </div>

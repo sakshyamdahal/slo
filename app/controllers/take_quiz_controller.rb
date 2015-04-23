@@ -1,7 +1,7 @@
 class TakeQuizController < ApplicationController
   def take
   	@quiz = Test.find(params[:quiz_id])
-  	@questions = @quiz.questions
+  	@questions = @quiz.questions.shuffle
   	@user = current_user
   end
 
@@ -16,5 +16,11 @@ class TakeQuizController < ApplicationController
   			@score += 1
   		end
   	end
+
+  	score = Score.new
+  	score.user_id = current_user.id
+  	score.test_id = @quiz.id
+  	score.percentage = (@score/@totalScore) * 100
+  	score.save
   end
 end
