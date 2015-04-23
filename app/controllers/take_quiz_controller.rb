@@ -20,7 +20,7 @@ class TakeQuizController < ApplicationController
   	score = Score.new
   	score.user_id = current_user.id
   	score.test_id = @quiz.id
-  	score.percentage = (@score/@totalScore) * 100
+  	score.percentage = (@score.to_f/@totalScore.to_f) * 100
   	score.save
   end
 end

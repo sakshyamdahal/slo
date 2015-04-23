@@ -7,11 +7,11 @@
 
 	<h3>Your score <%= @score %> </h3>
 	<div class="progress">
-  			<div class="progress-bar progress-bar-success" style="width: <%= (@score/@totalScore) * 100 %>%">
+  			<div class="progress-bar progress-bar-success" style="width: <%= (@score.to_f/@totalScore.to_f) * 100 %>%">
 		    	<span class="sr-only"><%= (@score/@totalScore) * 100 %>%</span>
 		 	</div>
-		 	<div class="progress-bar progress-bar-danger" style="width: <%= 100 - ((@score/@totalScore) * 100 )%>%">
-		    	<span class="sr-only"><%= 100 - ((@score/@totalScore) * 100 )%>%</span>
+		 	<div class="progress-bar progress-bar-danger" style="width: <%= 100 - ((@score.to_f/@totalScore.to_f) * 100 )%>%">
+		    	<span class="sr-only"><%= 100 - ((@score.to_f/@totalScore.to_f) * 100 )%>%</span>
 		 	</div>
 		 </div>
 	<h3>Total questions <%= @totalScore %> </h3>
